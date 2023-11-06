@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head><script src="./assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Sticky Footer Navbar Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true"></a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit"></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">Conditions générales de ventes</h1>
+    <p class="lead">conditions générales de vente.*
+      Générale
+      Les présentes conditions générales de vente (ci-après les « Conditions Générales de Vente ») régissent exclusivement les ventes de produits de prêt-à-porter masculin et d’accessoires (ci-après « les Produits ») entre CELIO France SAS, au capital de 11.684.944 Euros, dont le siège est situé 21 rue Blanqui 93406 Saint Ouen immatriculée au Registre du Commerce et des Sociétés de Bobigny sous le Numéro 313 334 856, dont les identifiants uniques sont (CELIO FRANCE SAS est référencée au registre pour chacune des filières suivantes) Citéo:
+      - Eco-papier : FR209088_03RMJ
+      - Eco-emballages: FR209088_01VSQU
+      Refashion: FR209088_11PUSQ
+      
+      (ci-après « CELIO »)
+      
+      et tout utilisateur, client ou non (ci-après désigné l’« Utilisateur » ou le « Client » ou « vous ») du site www.celio.com (ci-après « le Site »), à l’exclusion de toute autre condition, notamment celles en vigueur pour les ventes en magasin.
+      
+      Les Conditions Générales de Vente peuvent faire l’objet de modifications ultérieures. Les rapports contractuels entre CELIO et les Clients sont régis par les Conditions Générales de Vente transmises au Client à la date de la commande.
+      
+      Les Conditions Générales de Vente communiquées dans le mail de confirmation de votre commande sont celles en vigueur à la date de votre commande et donc celles applicables à cette commande.
+      
+      Il est précisé que l’achat de Produits sur le Site est réservé aux personnes physiques, qui n’agissent pas dans le cadre de leur activité professionnelle, âgées de plus de dix-huit (18) ans et ayant la pleine capacité juridique.
+      
+      Le Site ne permet pas l’achat de Produits en vue de leur revente.
+      
+      CELIO se réserve également la faculté de refuser toute commande ayant un caractère anormal.
+      
+      Article 1 : Informations produits
+      Seuls les Produits figurant sur le Site au jour de la commande par le Client sont proposés à la vente, dans la limite des stocks disponibles. CELIO apporte le plus grand soin à la mise en ligne d’informations relatives aux caractéristiques essentielles des Produits, notamment au moyen de descriptifs détaillés et de photographies illustrant les Produits, et ce dans le respect des meilleurs standards du marché.
+      
+      Le Client est invité à se reporter au descriptif de chaque Produit afin d’en connaître les propriétés et les particularités, notamment quant aux caractéristiques recherchées et à la taille souhaitée.
+      
+      Article 2 : Passer une commande
+      2.1 Conditions
+      Toute commande d’un/de Produit(s) proposé(s) sur le Site implique l'adhésion pleine et entière de l’Utilisateur aux présentes Conditions Générales de Vente.
+      
+      Vous pouvez passer commande sur le Site 24/24h et 7/7j.
+      Le processus de commande se compose de quatre (4) étapes successives. Une fois votre choix de Produit(s) effectué (taille, coloris, quantité, voire longueur), et votre panier validé, vous devez :
+      - Créer un compte ou vous identifier ;
+      - Choisir votre mode de livraison : en magasin, à votre domicile ou à une adresse susceptible de réceptionner votre colis ;
+      - Choisir votre mode de règlement ;
+      - Accepter les Conditions Générales de Vente en cochant la case prévue à cet effet sur la page récapitulative de votre commande (intitulée « Paiement »).
+      
+      Le paiement formalise de manière ferme et définitive le contrat de vente qui vous lie à CELIO.
+      
+      Sont décrits à l’article 7 « Droits de rétractation » les moyens mis à votre disposition pour vous rétracter.
+      
+      2.2 Confirmation et suivi de commande
+      Une fois les quatre étapes mentionnées ci-dessus complétées, CELIO confirme ensuite, dans un délai maximum de deux (2) heures, votre commande.
+      
+      Une fois votre commande confirmée, et à la condition d’avoir obtenu préalablement l’autorisation de débit de votre compte conformément aux stipulations de l’article 4 intitulé « Paiement », CELIO procèdera à son expédition.
+      
+      Un courrier électronique vous informe de son expédition. La facture est alors à votre disposition dans votre espace « Mon compte » (accéder à mon compte) ou auprès de notre Service Client.
+      
+      Vous pouvez suivre l'évolution de votre commande sur le Site ou contacter le Service Client au 09 69 32 34 20 (prix d’un appel local) du lundi au samedi de 9h00 à 18H.
+      
+      Article 3 : Prix et frais de livraison
+      Les prix de vente sont indiqués en Euros et Toutes Taxes Comprises (TTC), hors frais de livraison. La Taxe sur la Valeur Ajoutée (TVA) est celle en vigueur au jour de la commande sur le territoire français.
+      
+      Les prix appliqués sont ceux figurant sur le Site au moment de la validation de la commande.
+      
+      Les prix affichés sur le Site s’entendent hors frais de livraison.
+      
+      Le prix des Produits achetés est payable comptant, en totalité au jour de la passation de la commande par le Client. CELIO ne sera pas tenu de procéder à la livraison des Produits commandés par le Client si le prix ne lui a pas été préalablement réglé en totalité. La propriété des Produits n’est transférée au Client qu’après parfait paiement du prix par ce dernier.
+      
+      Les frais de livraison pour chaque commande sont forfaitaires, peu importent donc la taille ou le poids de votre commande.
+      
+      Le coût de chaque méthode de livraison est clairement indiqué durant le processus de paiement.
+      
+      Si nous ne sommes pas en mesure de livrer votre commande dans sa totalité et devons procéder à plusieurs livraisons, les livraisons ultérieures n’occasionneront pas de frais supplémentaires pour vous.
+      
+      Article 4 : Paiement
+      CELIO met à votre disposition les modes de paiement suivants :
+      - Règlement par carte bancaire (e-carte, CB, Visa ou Mastercard) ;
+      - Règlement par Paypal ;
+      - Règlement par carte cadeau CELIO.
+      
+      4.1 Paiement par Carte Bancaire ou Paypal
+      En cas de paiement par carte bancaire ou par Paypal, le débit de votre commande est effectué lors de son expédition, à la condition d’avoir obtenu préalablement l’autorisation de débit de votre compte auprès des centres de paiement compétents, faute de quoi votre commande ne pourra être prise en compte.
+      
+      Dans le cas où un article venait à manquer en raison d’une rupture de stock dans nos entrepôts, son montant sera déduit automatiquement de votre prélèvement.
+      
+      Si vous annulez votre commande dans l’heure suivant le passage de la commande, aucun débit ne sera alors effectué sur votre carte bancaire ou votre compte Paypal.
+      
+      Le serveur dédié au paiement par carte bancaire fait l’objet d’une sécurisation par cryptage S.S.L. (Secure Socket Layer) de manière à protéger le plus efficacement possible toutes les données liées aux moyens de paiement, et qu’à aucun moment les données bancaires des Clients ne transitent sur le système informatique de CELIO. Conformément à notre engagement sur la sécurité des paiements, nous vous informons que CELIO vérifie la fiabilité des informations saisies lors de l’enregistrement d’une commande.
+      
+      Afin de renforcer la sécurité du paiement, CELIO a également mis en place un paiement avec 3D Secure selon certaines conditions. Cette démarche s’inscrit dans la volonté de lutter contre les fraudes aux moyens de paiement sur Internet et protéger ainsi l’ensemble des consommateurs.
+      
+      4.2 Paiement par carte cadeau
+      Les cartes cadeaux (carte cadeau classique et e-carte cadeau) CELIO sont valables un (1) an et utilisables dans tous les magasins CELIO de France et sur celio.com.
+      Une carte cadeau peut être utilisée en plusieurs fois.
+      
+      Une seule carte cadeau peut être utilisée par commande.
+      
+      En cas de paiement par carte cadeau, le débit de votre carte cadeau est immédiat.
+      
+      Les cartes cadeau ne sont ni échangeables, ni remboursables, même partiellement.
+      
+      Elles ne sont ni remplacées ni remboursées en cas de perte ou de vol ou de fin de validité.
+      
+      Article 5 : Modes de livraison
+      5.1 Généralités
+      CELIO propose les modes de livraison suivants :
+      - Dans l’un des magasins CELIO,
+      - À une adresse choisie par le Client en France,
+      - Ou à un site où un colis peut être récupéré (« point relais »).
+      
+      CELIO s’engage à faire les meilleurs efforts pour livrer votre commande conformément à l’option de livraison sélectionnée.
+      
+      CELIO livre en France métropolitaine, mais n’est pas en mesure de livrer en Corse, dans les départements et territoires d'outre-mer.
+      
+      CELIO s’engage à faire les meilleurs efforts pour expédier vos commandes le plus rapidement possible et dans l'ordre où elles ont été passées. Nous nous efforçons de livrer les Clients dans un délai de deux (2) à dix (10) jours ouvrables après confirmation de la commande, et en tout état de cause dans les trente (30) jours après la confirmation d'une commande.
+      
+      CELIO s’engage à faire les meilleurs efforts pour livrer dans les délais communiqués, cependant les délais de livraison peuvent être allongés en raison d'événements imprévus. Dans le cas où le délai de livraison dépasserait trente (30) jours, le Client serait alors habilité à annuler sa commande par lettre recommandée avec demande d’avis de réception ou par un écrit sur tout autre support durable (et ce si, après avoir enjoint selon les mêmes modalités CELIO d’avoir effectué la livraison dans un délai supplémentaire raisonnable, ce dernier ne s’est pas exécuté dans ce délai.)
+      
+      Avant de passer commande, le Client est informé des délais de livraison prévus avec une date indicative de livraison. Une fois la commande passée, vous recevez un e-mail de confirmation comportant ces mêmes informations (les délais de livraison prévus et date indicative de livraison).
+      
+      Lors de certaines périodes (soldes, ventes privées, fêtes, …) les délais de traitement peuvent être plus longs en raison du volume de colis à traiter. Toutes les équipes CELIO se mobilisent et vous remercient de votre compréhension.
+      
+      Si vous décidez de confier la livraison de votre commande à un transporteur autre que celui proposé par CELIO, le risque de perte ou d’endommagement du colis et/ou des Produits vous est transféré lors de la remise du colis au transporteur.
+      
+      Nous vous invitons à consulter régulièrement le suivi de votre commande ou à contacter le Service Client au 09 69 32 34 20 (prix d’un appel local) du lundi au samedi de 9h00 à 18h00 pour toute question ou en cas de problème.
+      
+      5.2 Réserves
+      A réception de la commande, le Client vérifie la conformité des Produits reçus à sa commande.
+      
+      Toute anomalie concernant la livraison (notamment colis endommagés, Produits manquants ou abîmés) doit impérativement être indiquée, en premier lieu, sur le bon de livraison et sous forme de réserves manuscrites accompagnées de votre signature auprès du transporteur.
+      
+      Nous vous rappelons que vous avez la faculté de refuser le colis lors de la livraison, pour quelque raison que ce soit. Votre commande vous sera alors intégralement remboursée.
+      
+      En tout état de cause, vous bénéficiez des garanties légales de conformité et des vices cachés, et ce conformément aux dispositions légales en vigueur, en particulier celles décrites à l’article 8 « Service client et garanties » des présentes Conditions Générales de Vente.
+      
+      Les stipulations de cet article ne vous empêchent pas de bénéficier du droit de rétractation avec remboursement prévu ci-après.
+      
+      Article 6 : Retour et remboursement d’un ou plusieurs produits (hors droit de rétractation)
+      6.1 Effectuer un retour
+      Les Clients ont la possibilité, pour le(s) Produit(s) achetés sur le Site, d’effectuer le retour :
+      Soit gratuitement dans un magasin CELIO (France métropolitaine) : TROUVER UN MAGASIN CELIO.
+      Soit à vos frais à notre entrepôt à l’adresse suivante :
+      Celio Ecommerce
+      Rue de Bruxelles
+      60110 AMBLAIVILLE
+      France
+      Les frais d’envoi sont à la charge du Client
+      
+      Les Clients disposent d’un délai de quatre-vingt-dix (90) jours à compter de la réception de la commande pour effectuer un tel retour.
+      
+      Le(s) Produit(s) retournés doivent être dans leur état d'origine et complets (emballage, accessoires, étiquettes d’origine, …) permettant la recommercialisation à l’état neuf du/des Produit(s). Le(s) Produit(s) retourné(s) incomplet(s), endommagé(s), ou sali(s) ne seront ni repris ni remboursés. Dans ces circonstances, le colis sera mis à la disposition du Client pendant 30 jours, au cours desquels, ce dernier pourra, s’il le souhaite, demander au Service Client (dont les coordonnées se trouvent à l’article 8.1 ci-après), la réexpédition dudit colis aux frais du Client.
+      
+      6.2 Remboursement
+      Le remboursement sera effectué par CELIO en utilisant le même moyen de paiement que celui utilisé pour la transaction initiale. Il est cependant précisé, dans l’hypothèse d’un paiement total ou partiel par carte cadeau, que ceux-ci ne peuvent être remboursés ni en espèces, ni par chèque, ni par carte bancaire. Le remboursement des achats effectués par carte cadeau s'effectue exclusivement sous forme d’une e-carte cadeau, pour un montant identique à celui payé sous cette forme, expédiée à l’adresse email utilisée lors de la commande initiale.
+      
+      En cas de retour partiel de la commande, et dans la mesure où les frais de livraison sont forfaitaires, les frais de livraison ne sont pas remboursés.
+      
+      Article 7 : Droit de rétractation
+      7.1 Exercice du droit de rétractation
+      Conformément aux dispositions légales en vigueur, vous disposez d’un délai de 14 jours à compter de la réception de votre commande pour exercer votre droit de rétractation auprès de CELIO sans avoir à justifier de motifs ni à payer de pénalité.
+      
+      Une fois le droit de rétractation exercé par le Client, ce dernier dispose à nouveau d’un délai de 14 jours à compter de la notification de sa rétractation, pour retourner la totalité de la commande dans son emballage.
+      
+      Pour exercer votre droit de rétractation, vous devez informer CELIO de votre décision de rétractation en adressant, avant l’expiration d’un délai de 14 jours à compter de la réception de votre commande, un formulaire de rétractation ou toute autre déclaration dénuée d'ambiguïté dans laquelle vous exprimez votre volonté de vous rétracter.
+      
+      Vous trouverez en annexe 1 des présentes Conditions Générales de Vente le formulaire de rétractation standard que vous pouvez reproduire sur papier libre.
+      
+      Votre formulaire/déclaration de rétractation complétée doit être envoyé par courrier à l’adresse suivante :
+      CELIO Service Client
+      21 rue Blanqui
+      93406 Saint-Ouen Cedex
+      France
+      
+      Ou par email au service client.
+      
+      A réception du formulaire ou de la déclaration de rétractation, CELIO vous envoie par email un accusé de réception de la rétractation.
+      
+      7.2 Retour à la suite de l’exercice du droit de rétractation
+      Le Client doit retourner dans sa totalité la commande concernée, accompagnée d’un bon de retour imprimé, obtenu soit depuis la rubrique « Mon compte » soit envoyé par e-mail par le Service Client préalablement contacté, dans un délai raisonnable et au plus tard 14 jours à compter de l’envoi du formulaire/de la déclaration de rétractation et ce :
+      - Soit gratuitement dans un magasin CELIO (France métropolitaine) : TROUVER UN MAGASIN CELIO
+      - Soit à vos frais à notre entrepôt à l’adresse suivante :
+      Celio Ecommerce
+      Rue de Bruxelles
+      60110 AMBLANVILLE
+      FRANCE
+      
+      Le retour de la commande est à effectuer dans un seul colis, la totalité de la commande devant être dans leur état d'origine et complets (emballage, accessoires, étiquettes d’origine, …) permettant la recommercialisation à l’état neuf du/des Produit(s). Les commandes retournées incomplètes ou avec de(s) Produit(s) endommagé(s), ou sali(s) ne seront ni repris ni remboursés.
+      
+      Cas particulier de non récupération des commandes livrées en magasin : si vous avez choisi l’option de livraison de votre commande dans l’un des magasins CELIO, et que vous ne venez pas chercher votre commande, votre commande sera annulée après 90 jours suivant la prévenance de l’arrivée de la commande en magasin. Durant ces 90 jours, vous gardez la possibilité d’annuler votre commande livrée en magasin en appelant le magasin dans lequel votre commande a été livrée. Votre commande vous sera alors également remboursée dans un délai maximum de 30 jours suivants l’annulation de votre commande.
+      
+      7.3 Remboursement
+      Lorsque le droit de rétractation est valablement exercé, et si les conditions mentionnées au présent article sont remplies, CELIO rembourse le prix de la commande dans un délai de quarante-huit (48) heures ouvrées après réception en entrepôt ou retour de la commande en magasin.
+      
+      Celio diffère le remboursement jusqu’à réception de la commande ou jusqu’à ce que le Client ait fourni une preuve de l’expédition de la commande.
+      
+      Les frais de livraison au moment de la commande (dans la limite de la somme correspondant au mode d’envoi standard (c’est-à-dire en point relais) sont remboursés uniquement en cas d’exercice du droit de rétractation. En cas de retour partiel de la commande, et dans la mesure où les frais de livraison sont forfaitaires, ceci ne sont pas remboursés.
+      
+      Le remboursement sera effectué par CELIO en utilisant le même moyen de paiement que celui utilisé pour la transaction initiale. Il est cependant précisé, dans l’hypothèse d’un paiement total ou partiel par carte cadeau, que ceux-ci ne peuvent être remboursés ni en espèces, ni par chèque, ni par carte bancaire. Le remboursement des achats effectués par carte cadeau s'effectue exclusivement sous forme d’une e-carte cadeau, pour un montant identique à celui payé sous cette forme, expédiée à l’adresse email utilisée lors de la commande initiale.
+      
+      Article 8 : Service client et garanties légales
+      8.1 Service Client
+      Pour toute information ou question, notre Service Client est à votre disposition. Pour un suivi de commande, pour l’exercice du droit de rétractation ou pour faire jouer la garantie, nous sommes à votre disposition par téléphone au 09 69 32 34 20 (prix d’un appel local) du lundi au samedi de 9h00 à 18h00, ou depuis la page « contactez-nous ».
+      CELIO s’engage à faire les meilleurs efforts pour apporter une réponse aux demandes d’information et/ou trouver une solution adéquate aux réclamations du Client.
+      
+      8.2 Garantie – Disposition générales
+      En cas de Produit(s) défectueux, CELIO se conforme à toutes les dispositions légales et réglementations en termes de garantie.
+      
+      Tous nos Produits bénéficient du régime légal de garantie, pour autant que l’utilisation en ait été normale et que les conseils d’entretien aient été suivis.
+      
+      Conformément à l’article L. 121-20-3 du Code de la Consommation, la responsabilité de CELIO au titre des contrats conclus à distance par le biais du Site ne pourra être retenue en cas d’inexécution ou de mauvaise exécution imputable soit au Client, soit au fait, imprévisible et insurmontable, d’un tiers au contrat ou encore en cas de force majeure
+      
+      8.3 Garantie légale de conformité
+      Conformément à l’article L217-4 du Code de la Consommation, CELIO est tenu de vendre un bien conforme au contrat et répond des défauts de conformité existant lors de la délivrance. Il répond également des défauts de conformité résultant de l'emballage, des instructions de montage ou de l'installation lorsque celle-ci a été mise à sa charge par le contrat ou a été réalisée sous sa responsabilité.
+      
+      Conformément à l’article L217-5 du Code de la Consommation le bien est conforme au contrat :
+      1° S’il est propre à l’usage habituellement attendu d’un bien semblable et, le cas échéant :
+      - S’il correspond à la description donnée par le vendeur et possède les qualités que celui-ci a présentées à l'acheteur sous forme d'échantillon ou de modèle,
+      - S’il présente les qualités qu'un acheteur peut légitimement attendre eu égard aux déclarations publiques faites par le vendeur, par le producteur ou par son représentant, notamment dans la publicité ou l'étiquetage,
+      2° S’il présente les caractéristiques définies d'un commun accord par les parties ou est propre à tout usage spécial recherché par l'acheteur, porté à la connaissance du vendeur et que ce dernier a accepté.
+      
+      CELIO est tenu de la garantie légale de conformité selon les articles L217-4 et suivant du Code de la Consommation.
+      
+      Conformément à l’article L217-12 du Code de la Consommation, CELIO rappelle à ses Clients que l’action résultant du défaut de conformité se prescrit par deux (2) ans à compter de la délivrance du bien.
+      
+      8.4 Garantie légale des vices cachés
+      Conformément à l’article 1641 du Code Civil, le vendeur est tenu de la garantie à raison des défauts cachés de la chose vendue qui la rendent impropre à l'usage auquel on la destine, ou qui diminuent tellement cet usage que l'acheteur ne l'aurait pas acquise, ou n'en aurait donné qu'un moindre prix, s'il les avait connus.
+      
+      CELIO est tenu de la garantie légale des vices cachés selon les articles 1641 et suivants du Code Civil.
+      
+      Conformément à l’article 1644 du Code Civil, CELIO permet à ses Clients de choisir entre l’échange et le remboursement du/des Produit(s).
+      
+      Conformément à l’article 1648 alinéa premier du Code Civil, CELIO rappelle à ses Clients que l’action résultant des vices cachés doit être intentée par l’acquéreur dans un délai de deux ans à compter de la découverte du vice
+      
+      8.5 Exercice des garanties légales
+      CELIO rappelle aux Clients que dans le cadre de la garantie légale de conformité :
+      - Ils bénéficient d'un délai de deux (2) ans à compter de la délivrance du bien pour agir ;
+      - Ils peuvent choisir entre la réparation ou le remplacement du bien, sous réserve des conditions de coût prévues par l'article L. 217-9 du Code de la consommation ;
+      - Il est dispensé de rapporter la preuve de l'existence du défaut de conformité du bien durant les vingt-quatre (24) mois suivant la délivrance du bien.
+      
+      Aussi le consommateur peut décider de mettre en œuvre la garantie contre les défauts cachés de la chose vendue au sens de l'article 1641 du Code civil et dans cette hypothèse, il peut choisir entre la résolution de la vente ou une réduction du prix de vente conformément à l'article 1644 du Code civil.
+      
+      Article 9 : Protection des données personnelles et cookies
+      Le Responsable de traitement des données à caractère personnel des Clients est la société CELIO France, Société par Actions Simplifiée au capital de 11 684 944 euros, dont le siège social est sis 21 rue Blanqui 93406 Saint Ouen, immatriculée au RCS de Bobigny sous le numéro 313 334 856, numéro SIRET 313 334 856 01684.
+      Les informations collectées par CELIO France directement auprès du Client, dans le cadre de son inscription sur le site ou lors de son utilisation du site font l’objet d’un traitement automatisé ayant pour finalité la gestion, le suivi des commandes des clients, de la livraison des produits commandés et des communications concernant les commandes, les produits, les offres promotionnelles ciblées.
+      
+      CELIO France conservera les données personnelles dans un environnement sécurisé pendant la durée nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées ou pendant la durée de conservation minimale prévue par la législation applicable notamment en matière civile et commerciale. Certaines données personnelles peuvent être conservées par CELIO France pour des durées plus longues exclusivement à des fins archivistiques, dans l’intérêt public, à des fins de recherche scientifique ou historique ou à des fins statistiques.
+      
+      Les données sont conservées pendant la durée strictement nécessaire à la gestion de la relation commerciale. Les données traitées dans le cadre d’opérations de prospection avec votre accord ne pourront être conservées plus de 3 ans après le dernier contact émanant de votre part ou dans le cadre de votre opposition. Dans le cadre d’un achat en ligne, les données sont archivées pendant 5 ans à l’issue de la prestation. Les informations relatives à votre carte bancaire ne sont pas conservées au-delà de la période de transaction à moins que vous ayez consenti à leur enregistrement.
+      
+      Conformément au Règlement (UE) 2016/679 relatif à la protection des données à caractère personnel, vous disposez des droits suivants sur vos données : droit d’accès, droit de rectification, droit à l’effacement (droit à l’oubli), droit d’opposition, droit à la limitation du traitement, droit à la portabilité. Vous pouvez également définir des directives relatives à la conservation, à l'effacement et à la communication de vos données à caractère personnel après votre décès.
+      
+      Vous pouvez, pour des motifs tenant à votre situation particulière, vous opposer au traitement des données vous concernant.
+      
+      Pour exercer vos droits, merci de vous adresser par courrier à celio - Service client, 21 rue Blanqui 93400 Saint-Ouen, ou sur celio.com. Merci de joindre la copie d’une pièce d’identité.
+      
+      Sous réserve d’un manquement à aux dispositions ci-dessus, vous avez le droit d’introduire une réclamation auprès de la CNIL.
+      
+      Pour plus d’information, vous pouvez consulter la Politique de Confidentialité de CELIO France en cliquant ici.
+      
+      Le Site utilise des cookies, pour plus d’information sur notre usage des cookies et afin de pouvoir paramétrer ces derniers, vous pouvez consulter la Politique de Confidentialité de CELIO France en cliquant ici.
+      
+      Article 10 : Propriété intellectuelle
+      L’ensemble du contenu du Site, à savoir notamment tous les textes, commentaires, ouvrages, illustrations, œuvres, Newsletter, logo et images reproduits ou représentés sont strictement réservés au titre du droit d'auteur ainsi qu'au titre de la propriété intellectuelle et pour le monde entier.
+      
+      À ce titre, et conformément aux dispositions du Code de la propriété intellectuelle, seule l'utilisation pour un usage privé, sous réserve de dispositions différentes voire plus restrictives du code de la propriété intellectuelle, est autorisée. Toute reproduction ou représentation totale ou partielle du Site ou de tout ou partie des éléments se trouvant sur le Site est strictement interdite. Toute utilisation de ces contenus en fraude des droits détenus par des tiers sur ceux-ci est constitutive du délit de contrefaçon, sévèrement sanctionné par le Code de la propriété intellectuelle.
+      
+      Toute violation des dispositions qui précèdent constitue un acte de contrefaçon susceptible d’engager la responsabilité civile et/ou pénale de son auteur.
+      
+      Celio ne saurait en aucun cas être tenu pour responsable de la violation par un utilisateur de droits détenus par des tiers, perpétrée à raison des activités de ce dernier sur le Site.
+      
+      Article 11 : Stipulations diverses
+      11.1 Intégralité du contrat
+      Les présentes Conditions Générales de Vente et le récapitulatif de commande transmis à l’Utilisateur forment un ensemble contractuel récapitulant l’intégralité des conventions intervenues entre les parties.
+      
+      Le fait de ne pas se prévaloir à un moment donné de l'une quelconque des clauses de ces conventions ne peut valoir renonciation à se prévaloir ultérieurement de ces mêmes clauses. En cas d'invalidité de l'une d'entre elles, les autres clauses demeurent valables.
+      
+      11.2 Loi applicable – Juridictions compétentes
+      Les présentes Conditions Générales de Vente et les relations contractuelles entre CELIO et l’Utilisateur sont soumises à la loi française. En cas de litige, les tribunaux français seront seuls compétents.
+      
+      CELIO s’engage cependant à rechercher une solution amiable avant toute action judiciaire.
+      
+      Article 12 : Médiation
+      Conformément aux dispositions du Code de la consommation concernant le règlement amiable des litiges, CELIO adhère au Service du Médiateur du e-commerce de la Fédération du e-commerce et de la vente à distance (la FEVAD) dont les coordonnées sont les suivantes : 60 Rue La Boétie – 75008 Paris (http://www.mediateurfevad.fr).
+      
+      Après démarche préalable écrite des consommateurs vis-à-vis de CELIO, (depuis la page « Contactez-nous » ), le Service du Médiateur peut être saisi pour tout litige de consommation dont le règlement n’aurait pas abouti. Pour connaître les modalités de saisine du Médiateur, cliquez ici.
+      
+      CELIO vous informe également que conformément au règlement européen n°524/2013 du 21 mai 2013, vous pouvez solliciter la résolution de votre litige sur la plateforme dédiée à la résolution en ligne des litiges de la consommation accessible via le lien suivant : ec.europa.eu/consumers/odr.
+      
+      Article 13 : Avis Clients
+      Les avis clients sur nos produits, disponibles sur le site www.celio.com sont des avis authentiques, conformes à la norme NF Z74-501.
+      
+      Une fois qu’un client dépose un avis, il est transmis à un modérateur avant sa publication sur www.celio.com. Pour plus d'information, consultez notre Politique de confidentialité.
+      
+      Version du 21/07/2023
+      
+      Annexe / Formulaire de rétractation
+      Si vous souhaitez faire valoir votre droit de rétractation, dans le respect des conditions prévues à l’article 7 des présentes Conditions Générales de Vente, vous avez la possibilité d’utiliser le formulaire ci-dessous et l’adresser en lettre recommandée avec accusé de réception :
+      
+      A l’attention de :
+      CELIO Service Client
+      21 rue Blanqui
+      93406 St Ouen Cedex
+      
+      Madame, Monsieur,
+      Conformément à l’article L. 221-18 du code de la consommation, je vous informe que je souhaite exercer mon droit de rétractation concernant cette commande et je vous la retournerai dans les quatorze jours à venir.
+      
+      - N° commande :
+      - Nom du client à l’origine de la commande :
+      - Adresse du client à l’origine de la commande :
+      - Commandé(s) le :
+      - Reçu(s) le :
+      
+      Date :
+      
+      Signature :</p>
+    
+  </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-body-tertiary">
+  <div class="container">
+    <span class="text-body-secondary">Place sticky footer content here.</span>
+  </div>
+</footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

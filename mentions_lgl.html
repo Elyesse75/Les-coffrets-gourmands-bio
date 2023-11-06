@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" class="h-100" data-bs-theme="auto">
   <head><script src="./assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <title>Album example · Bootstrap v5.3</title>
+    <title>Sticky Footer Template · Bootstrap v5.3</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sticky-footer/">
 
     
 
@@ -93,13 +93,14 @@
 
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
-        
       }
     </style>
 
     
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -152,106 +153,46 @@
     </div>
 
     
-<header data-bs-theme="dark">
-  <div class="collapse text-bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4>About</h4>
-          <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4>Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">Mentions légales</h1>
+    <p class="lead">mentions légales.*
+      Responsable du site
+      Direction digitale
+      CELIO France
+      
+      DESCHAMPS Erwan
+      Directeur E-commerce
+      
+      21, rue Blanqui
+      93406 Saint-Ouen Cedex - France
+      Société par Actions Simplifiée au capital de 11 684 944 €
+      Immatriculée au RCS de Bobigny sous le numéro 313 334 856
+      SIRET 313 334 856 01684.
+      Numéro de TVA intracommunautaire : FR 84 313 334 856
+      
+      Service Client
+      Numéro Cristal® (appel non surtaxé) :09 69 32 34 20
+      joignable du lundi au samedi de 9h à 18h
+      Mail : contact@celio.com
+      
+      Hébergeur
+      Salesforce
+      3 Avenue Octave Gréard
+      75007, Paris - FRANCE
+      https://www.salesforce.com/fr
+      Téléphone : +33 (0)1 72 10 94 00
+      
+      Immatriculée au Registre du Commerce et des Sociétés
+      sous le numéro 529 993 735</p>
+   
   </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Album</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Panier sucre</h1>
-        <p class="lead text-body-secondary">composition du panier sucre</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="./img-bsc.jpg">
-            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            -->
-            <div class="card-body">
-              <p class="card-text">des biscuits fait maison </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="./page_compobsc.html"><button type="button" class="btn btn-sm btn-outline-secondary">compositions</button></a>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-       
-       
-       
-       
-       
-       
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="./img_cock.jpg">
-           <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-           --> 
-            <div class="card-body">
-              <p class="card-text">des boissons exotique</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="./page_compoboiss.html" type="button" class="btn btn-sm btn-outline-secondary">compositions</button></a>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-        
-            
-                </div>
-                
-           
 </main>
 
-<footer class="text-body-secondary py-5">
+<footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
-    <p class="float-end mb-1">
-      <a href="#"></a>
-    </p>
-    <p class="mb-1"></p>
-    <p class="mb-0"><a href="/"></a></p>
+    <span class="text-body-secondary"></span>
   </div>
 </footer>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
